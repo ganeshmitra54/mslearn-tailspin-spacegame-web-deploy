@@ -164,8 +164,9 @@ stages:
               ipDetectionMethod: 'AutoDetect'
 
 - stage: 'Dev'
+  dependsOn: DBAVerificationApply
   displayName: 'Deploy to the dev environment'
-  dependsOn: DBAVerificationApply 
+  dependsOn: Build
   jobs:
   - deployment: Deploy
     pool:
